@@ -13,6 +13,7 @@ function factorial(number) {
   }
   return result;
 }
+
 console.log(factorial(5)); // Output is : 120 , (5! = 5 * 4 * 3 * 2 * 1 = 120)
 console.log(factorial(0)); // Output is : 1 , (0! = 1)
 console.log(factorial(1));

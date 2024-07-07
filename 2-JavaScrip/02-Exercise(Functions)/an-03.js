@@ -5,4 +5,4 @@ const average = (numbers) => {
   return total / numbers.length;
 };
 
-console.log(average([1, 2, 3, 4, 5])); // Output: 3
+console.log(average([1, 2, 3, 4, 5, 6])); // Output: 3

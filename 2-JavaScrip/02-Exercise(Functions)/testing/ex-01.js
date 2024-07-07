@@ -1,17 +1,5 @@
-// expression
-const multiply = function (a, b) {
-  return a * b;
-};
+// 9. Write a function that takes an array of numbers as an input and returns the median value
 
-// anonymous
-function add(x, y) {
-  return x + y;
-}
+const numbers1 = 10;
 
-const result = add(3, 4);
-
-//anonymous in expression
-const calculateArea = function (width, height) {
-  return width * height;
-};
-const area = calculateArea(5, 3);
+console.log(getMedian(numbers1)); // Output: 3

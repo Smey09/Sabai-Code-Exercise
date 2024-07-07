@@ -14,5 +14,5 @@ function countVowels(inputString) {
 
 // Example usage:
 console.log(countVowels("Hello World")); // Output: 3
-console.log(countVowels("OpenAI")); // Output: 3
+console.log(countVowels("OpenAI")); // Output: 4
 console.log(countVowels("JavaScript")); // Output: 3

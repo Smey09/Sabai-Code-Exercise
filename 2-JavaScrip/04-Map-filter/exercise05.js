@@ -1,13 +1,15 @@
 // Given an array of numbers, use the `reduce` method to find the maximum number of the array
 
 // =========== 5 ===========
-const numbers = [10, 5, 80, 1, 7, 3, 9];
+// const numbers = [10, 5, 80, 1, 7, 3, 9];
 
 // const maxNumber = numbers.reduce(function (max, current) {
 //   return current > max ? current : max;
 // }, numbers[0]);
 
 // console.log(maxNumber);
+
+const numbers = [10, 5, 80, 1, 7, 3, 9];
 
 const maxNumber = numbers.reduce(function (max, current) {
   if (current > max) {

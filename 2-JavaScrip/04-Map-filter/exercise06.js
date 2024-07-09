@@ -5,9 +5,11 @@
 
 // ============ 6 ================
 const items = [
-  { name: "Bread", category: "Grocery" },
-  { name: "Butter", category: "Grocery" },
-  { name: "Shampoo", category: "Personal Care" },
+  { name: "banan", category: "fruit" },
+  { name: "apple", category: "fruit" },
+  { name: "orange", category: "fruit" },
+  { name: "sting", category: "drink" },
+  { name: "coffee", category: "drink" },
 ];
 
 const groupedByCategory = items.reduce(function (acc, item) {

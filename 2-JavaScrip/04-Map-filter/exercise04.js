@@ -3,16 +3,18 @@
 // into an array of date strings in the format “DD/MM/YYYY”
 // =========== 4 ============
 
+const dateString = ["2024-01-01", "2025-02-02", "2026-03-03"];
+console.log("Questions", dateString);
+console.log("---------------------------------------");
 function dateFormat(getDatesting) {
   const tranformDate = getDatesting.map((date) => {
     let parts = date.split("-");
+    console.log("split string to : ", parts);
     return `${parts[2]}/${parts[1]}/${parts[0]}`;
   });
   return tranformDate;
 }
 
-// simple array
-const dateString = ["2024-01-01", "2025-02-02", "2026-03-03"];
 const resultFormated = dateFormat(dateString);
-
-console.log(resultFormated);
+console.log("---------------------------------------");
+console.log("Answer is : ", resultFormated);

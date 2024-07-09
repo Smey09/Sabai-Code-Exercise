@@ -4,7 +4,7 @@
 
 const fs = require("fs");
 
-const writetoText = "test write file in javascrip";
+const writetoText = "test write and write file in javascrip";
 
 fs.writeFile("input.txt", writetoText, (err) => {
   if (err) {
@@ -13,3 +13,5 @@ fs.writeFile("input.txt", writetoText, (err) => {
   }
   console.log(writetoText);
 });
+
+module.export = writeFile;

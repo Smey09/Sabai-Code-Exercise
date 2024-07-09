@@ -2,3 +2,10 @@
 //     Example: console.log(sumAll(1, 2)) // 3
 //                     console.log(sumAll(1, 2, 3, 4, 5)) // 15
 
+function sumAll(...args) {
+  return args.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sumAll(1, 2)); // Output: 3
+console.log(sumAll(1, 2, 3, 4, 5)); // Output: 15
+console.log(sumAll(10, 20, 30, 40, 50)); // Output: 150

@@ -4,16 +4,16 @@
 //     Output: [1, 2, 3, 4, 5, 6]
 
 // ======== style 1 =========
-let Nums1 = [1, 2, 3];
-const Nums2 = [4, 5, 6];
+// let Nums1 = [1, 2, 3];
+// const Nums2 = [4, 5, 6];
 
-for (let i = 0; i < Nums2.length; i++) {
-  Nums1.push(Nums2[i]);
-  console.log(Nums1);
-}
+// for (let i = 0; i < Nums2.length; i++) {
+//   Nums1.push(Nums2[i]);
+//   console.log(Nums1);
+// }
 
-console.log(Nums1); // Output: [1, 2, 3, 4, 5, 6]
-console.log("---------------");
+// console.log(Nums1); // Output: [1, 2, 3, 4, 5, 6]
+// console.log("---------------");
 
 // ========= style 2 ============
 

@@ -11,5 +11,6 @@ const {
 } = customer;
 
 console.log(name); // Output: "Charlie"
-console.log(`${street}, ${city}`); 
+console.log(`${street}, ${city}`);
+console.log(address);
 // Output: "123 Main St, Los Angeles"

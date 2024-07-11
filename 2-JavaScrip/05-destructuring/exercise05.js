@@ -8,4 +8,3 @@ function sumAll(...args) {
 
 console.log(sumAll(1, 2)); // Output: 3
 console.log(sumAll(1, 2, 3, 4, 5)); // Output: 15
-console.log(sumAll(10, 20, 30, 40, 50)); // Output: 150

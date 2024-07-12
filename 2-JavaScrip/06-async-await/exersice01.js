@@ -17,6 +17,8 @@ function getUserInfoById(id, callback) {
   }, 2000);
 }
 
+// Exercise B, use Promise
+
 // Function to process user data (capitalize name)
 function processUserData(user, callback) {
   setTimeout(() => {

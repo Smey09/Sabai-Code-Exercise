@@ -14,3 +14,5 @@ function Car(model, year) {
 let myCar = new Car("BMW", 2024);
 console.log(myCar.getModel()); // BMW
 console.log(myCar.getYear()); // 2024
+
+console.log("Hello");

@@ -95,24 +95,6 @@ class Admin extends User {
   }
 }
 
-// Example usage
-// const library = new Library("City Library");
-
-// const book1 = new Book("Book Python Django", "Python Django", "Python", "01");
-// const book2 = new Book("Book Java OOP", "Java OOP", "Java", "02");
-// const book3 = new Book("Book Figma", "Figma", "Figma", "03");
-// const book4 = new Book("Book JavaScript", "JavaScript", "JavaScript", "04");
-// const book5 = new Book("Book Dart", "Dart", "Dart flutter", "05");
-// const book6 = new Book("Book Structure C++", "Structure C++", "C++", "06");
-// const book7 = new Book("Book Laravel", "Laravel", "PHP", "07");
-// library.addBook(book1);
-// library.addBook(book2);
-// library.addBook(book3);
-// library.addBook(book4);
-// library.addBook(book5);
-// library.addBook(book6);
-// library.addBook(book7);
-
 const library = new Library("City Library");
 
 const books = [

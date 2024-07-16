@@ -4,47 +4,22 @@
 //     and available (to track borrowing).
 
 class Book {
-  constructor(title, author, genre) {
+  constructor(title, author, genre, isbn, available = true) {
     this.title = title;
     this.author = author;
     this.genre = genre;
-    this.available = true; // Initially, all books are available
+    this.isbn = isbn;
+    this.available = available;
   }
 }
 
 class Library {
   constructor(name) {
     this.name = name;
-    this.books = []; // Initialize an empty array to store books
-  }
-
-  addBook(book) {
-    this.books.push(book);
-  }
-
-  removeBookByTitle(title) {
-    this.books = this.books.filter((book) => book.title !== title);
-  }
-
-  searchByTitle(title) {
-    return this.books.filter((book) => book.title.includes(title));
-  }
-
-  displayAvailableBooks() {
-    const availableBooks = this.books.filter((book) => book.available);
-    availableBooks.forEach((book) => {
-      console.log(`Title: ${book.title}, Author: ${book.author}`);
-    });
+    this.books = [];
   }
 }
 
-// Example usage:
-const myLibrary = new Library("My Awesome Library");
-
-const book1 = new Book("The Catcher in the Rye", "J.D. Salinger", "Fiction");
-const book2 = new Book("To Kill a Mockingbird", "Harper Lee", "Classic");
-
-myLibrary.addBook(book1);
-myLibrary.addBook(book2);
-
-myLibrary.displayAvailableBooks();
+// create new library
+let myLIB = new Library("NU-LIB");
+// console.table(myLIB.books);

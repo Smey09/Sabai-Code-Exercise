@@ -1,10 +1,3 @@
-//! 2. Basic Operations:
-//     * Implement methods for:
-//         - Adding a book to the library
-//         - Removing a book (by title or ISBN)
-//         - Searching for books by title, author, or genre
-//         - Displaying a list of all available books
-
 class Book {
   constructor(title, author, genre, isbn, available = true) {
     this.title = title;
@@ -81,6 +74,78 @@ class Library {
       console.log(`Book with ISBN ${isbn} not found in the library.`);
     }
   }
+
+  // ex3===========
+  // borrow book
+  borrowBook(isbn) {
+    const bookIndex = this.books.findIndex((book) => book.isbn === isbn);
+    // console.log(`sfas`,bookIndex);
+    if (bookIndex !== -1) {
+      if (this.books[bookIndex].available) {
+        this.books[bookIndex].available = false;
+        console.log(
+          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} has been borrowed.`
+        );
+      } else {
+        console.log(
+          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} is not available.`
+        );
+      }
+    } else {
+      console.log(`Book with ISBN ${isbn} not found in the library.`);
+    }
+    return bookIndex;
+  }
+
+  // return book
+  returnBook(isbn) {
+    const bookIndex = this.books.findIndex((book) => book.isbn === isbn);
+    if (bookIndex !== -1) {
+      if (!this.books[bookIndex].available) {
+        this.books[bookIndex].available = true;
+        console.log(
+          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} has been returned.`
+        );
+      } else {
+        console.log(
+          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} is already available.`
+        );
+      }
+    } else {
+      console.log(`Book with ISBN ${isbn} not found in the library.`);
+    }
+  }
+
+  // ===ex4
+  addUser(user) {
+    this.users.push(user);
+    console.log(`User ${user.name} added to the library.`);
+  }
+
+  findBook(isbn) {
+    return this.books.find((book) => book.isbn === isbn);
+  }
+
+  borrowBook(user, isbn) {
+    if (user instanceof Admin || user instanceof Student) {
+      user.borrowBook(this, isbn);
+    } else {
+      console.log(`User ${user.name} does not have borrowing privileges.`);
+    }
+  }
+
+  returnBook(user, isbn) {
+    if (user instanceof Admin || user instanceof Student) {
+      user.returnBook(this, isbn);
+    } else {
+      console.log(`User ${user.name} does not have borrowing privileges.`);
+    }
+  }
+
+  displayAvailableBooks() {
+    const availableBooks = this.books.filter((book) => book.available);
+    return availableBooks;
+  }
 }
 
 // create new library
@@ -114,3 +179,18 @@ console.table(myLIB.books);
 // let availableBook = myLIB.displayBook();
 // console.log(availableBook);
 // console.table(myLIB.books);
+
+// ================================== ex3 ==================================
+// borrow book
+// myLIB.borrowBook("1236");
+// console.log(myLIB.books);
+
+// myLIB.returnBook("1236");
+// console.log(myLIB.books);
+
+// ================================== ex4 ==================================
+
+// let adminUser = new Admin("Admin User");
+// let studentUser = new Student("Student User");
+// myLIB.addUser(adminUser);
+// myLIB.addUser(studentUser);

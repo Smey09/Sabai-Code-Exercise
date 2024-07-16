@@ -40,7 +40,7 @@ getAllUser()
     if (!success) {
       console.log("Not Found");
     } else {
-      console.log(success);
+      console.table(success);
     }
   })
   .catch((err) => {

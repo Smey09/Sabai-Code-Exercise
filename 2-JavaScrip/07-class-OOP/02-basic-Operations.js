@@ -95,8 +95,8 @@ myLIB.addBook(book3);
 // console.table(myLIB.books);
 
 // // remove book by isbn
-myLIB.removeBook("1236");
-console.table(myLIB.books);
+// myLIB.removeBook("1236");
+// console.table(myLIB.books);
 // // remove book by title
 // myLIB.removeBook("Title01");
 // console.table(myLIB.books);
@@ -110,7 +110,7 @@ console.table(myLIB.books);
 // let updatedBookData = { title: "001", author: "002", genre: "ABC", available: false };
 // myLIB.updateBook({isbn:"1234"}, updatedBookData);
 
-// // display book
-// let availableBook = myLIB.displayBook();
-// console.log(availableBook);
+// display book
+let availableBook = myLIB.displayBook();
+console.log(availableBook);
 // console.table(myLIB.books);

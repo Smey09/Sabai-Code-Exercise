@@ -76,6 +76,7 @@ let myLIB = new Library("NU-LIB");
 let book1 = new Book("Title01", "Author01", "Genre", "1234");
 let book2 = new Book("Title02", "Author02", "Genre", "1235");
 let book3 = new Book("Title03", "Author03", "Genre", "1236");
+let book4 = new Book()
 myLIB.addBook(book1);
 myLIB.addBook(book2);
 myLIB.addBook(book3);
@@ -83,8 +84,8 @@ myLIB.addBook(book3);
 
 // ================================== ex3 ==================================
 // borrow book
-myLIB.borrowBook("1236");
-console.table(myLIB.books);
+myLIB.borrowBook("1234");
+// console.table(myLIB.books);
 
-myLIB.returnBook("1234");
+// myLIB.returnBook("1234");
 // console.log(myLIB.books);

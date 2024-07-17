@@ -33,9 +33,9 @@ class User {
 
   viewBorrowedBooks() {
     console.log(`${this.name}'s borrowed books:`);
-    this.borrowed_books.forEach((book) =>
-      console.log(`- ${book.getTitle()} (${book.getISBN()})`)
-    );
+    // this.borrowed_books.forEach((book) =>
+    //   console.log(`- ${book.getTitle()} (${book.getISBN()})`)
+    // );
   }
 
   canBorrow() {

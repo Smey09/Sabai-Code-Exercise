@@ -26,7 +26,16 @@ let myLIB = new Library("NU-LIB");
 
 // !2. Adding Books:
 const books = new Array();
-books.push(new Book("Title01", "Author01", "Genre", "1234"));
-myLIB.books = books;
+books.push(new Book("Book OOP", "Author01", "Genre01","isbn01"))
+myLIB.books = Book
 
+console.log(books);
 console.table(books);
+
+
+
+// const books = new Array();
+// books.push(new Book("Title01", "Author01", "Genre", "1234"));
+// myLIB.books = books;
+
+// console.table(books);

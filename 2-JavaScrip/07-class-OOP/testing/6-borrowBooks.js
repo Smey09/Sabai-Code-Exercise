@@ -29,43 +29,36 @@ class Library {
     }
   }
 
-  // borrow book
-  borrowBook(isbn) {
-    const bookIndex = this.books.findIndex((book) => book.isbn === isbn);
-    // console.log(`sfas`,bookIndex);
+  borrowBook(title) {
+    const bookIndex = this.books.findIndex((book) => book.title === title);
     if (bookIndex !== -1) {
       if (this.books[bookIndex].available) {
         this.books[bookIndex].available = false;
-        console.log(
-          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} has been borrowed.`
-        );
+        console.log(`Book : ${this.books[bookIndex].title} has been borrowed`);
       } else {
-        console.log(
-          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} is not available.`
-        );
+        console.log(`Book "${this.books[bookIndex].title}" is not available.`);
       }
     } else {
-      console.log(`Book with ISBN ${isbn} not found in the library.`);
+      console.log("not found in the library");
     }
     return bookIndex;
   }
 
-  // return book
-  returnBook(isbn) {
-    const bookIndex = this.books.findIndex((book) => book.isbn === isbn);
+  returnBook(title) {
+    const bookIndex = this.books.findIndex((book) => book.title === title);
     if (bookIndex !== -1) {
       if (!this.books[bookIndex].available) {
         this.books[bookIndex].available = true;
         console.log(
-          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} has been returned.`
+          `Book "${this.books[bookIndex].title}" with ${title} has been returned.`
         );
       } else {
         console.log(
-          `Book "${this.books[bookIndex].title}" with ISBN ${isbn} is already available.`
+          `Book "${this.books[bookIndex].title}" with ${title} is already available.`
         );
       }
     } else {
-      console.log(`Book with ISBN ${isbn} not found in the library.`);
+      console.log(`Book with ${title} not found in the library.`);
     }
   }
 }
@@ -83,9 +76,9 @@ myLIB.addBook(book3);
 // console.table(myLIB.books);
 
 // ================================== ex3 ==================================
-// borrow book
-myLIB.borrowBook("1234");
+console.table(myLIB.books);
+myLIB.borrowBook("Title03");
 console.table(myLIB.books);
 
-myLIB.returnBook("1234");
+myLIB.returnBook("Title03");
 console.table(myLIB.books);

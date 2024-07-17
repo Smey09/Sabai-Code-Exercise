@@ -23,3 +23,10 @@ class Library {
 // create new library
 let myLIB = new Library("NU-LIB");
 // console.table(myLIB.books);
+
+// !2. Adding Books:
+const books = new Array();
+books.push(new Book("Title01", "Author01", "Genre", "1234"));
+myLIB.books = books;
+
+console.table(books);

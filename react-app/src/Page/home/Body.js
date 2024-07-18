@@ -1,6 +1,6 @@
 import { Image, Row, Col, Container } from "react-bootstrap";
 import ProductCard from "../../Component/Card";
-import CardNoDiscount from "../../Component/Card-NoDiscount";
+// import CardNoDiscount from "../../Component/Card-NoDiscount";
 import SaleCard from "../../Component/productCard/SaleCard";
 import Materials from "../../Component/productCard/Materials";
 import Discount from "../../Component/productCard/Discount";
@@ -360,40 +360,48 @@ const BodyApp = () => {
 
             <div style={{ paddingTop: "10px" }}>
               <div style={{ paddingBottom: "10px" }}>
-                <h4 style={{ color: "black", fontWeight: "bold" }}>
+                <h4
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                >
                   Popular Products
                 </h4>
               </div>
               <Container>
-                <Row>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                </Row>
+                <ProductCard></ProductCard>
               </Container>
+              {/* <Container>
+                <Row>
+                  <Col md={3}>
+                    <ProductCard />
+                  </Col>
+                  <Col md={3}>
+                    <ProductCard />
+                  </Col>
+                  <Col md={3}>
+                    <CardNoDiscount />
+                  </Col>
+                  <Col md={3}>
+                    <CardNoDiscount />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={3}>
+                    <ProductCard />
+                  </Col>
+                  <Col md={3}>
+                    <CardNoDiscount />
+                  </Col>
+                  <Col md={3}>
+                    <CardNoDiscount />
+                  </Col>
+                  <Col md={3}>
+                    <CardNoDiscount />
+                  </Col>
+                </Row>
+              </Container> */}
             </div>
 
             {/* ---------------------------------------------------------------- */}

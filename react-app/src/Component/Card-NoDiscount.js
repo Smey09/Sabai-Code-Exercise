@@ -5,7 +5,7 @@ import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 
 const CardNoDiscount = () => {
   return (
-    <Card style={{ width: "18rem", position: "relative" }}>
+    <Card style={{ width: "18rem", position: "relative", marginTop: "10px" }}>
       <Card.Body>
         <Card.Img
           variant="top"

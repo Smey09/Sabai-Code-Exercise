@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form, InputGroup, Image } from "react-bootstrap";
+import { Form, InputGroup, Image, Button } from "react-bootstrap";
 
 const NevBar = () => {
   return (
@@ -82,7 +82,20 @@ const NevBar = () => {
                   <tr>
                     <td>Favorite</td>
                     <td>|</td>
-                    <td>Shop</td>
+                    <td>
+                      <Button
+                        variant="light"
+                        style={{
+                          backgroundColor: "green",
+                          borderRadius: "30px",
+                          color: "white",
+                          paddingTop: "5px",
+                          paddingBottom: "5px",
+                        }}
+                      >
+                        Shop
+                      </Button>
+                    </td>
                     <td>Shopping Card :</td>
                     <td style={{ fontSize: "30px" }}>0$</td>
                   </tr>

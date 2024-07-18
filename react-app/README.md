@@ -14,7 +14,7 @@
 #### step 3 : run json-server
     npx json-server db.json
 #### 4 Open : 
-    http://localhost:3001
+    http://localhost:3000
 
 ## `How to change port json-server`
 #### step 1 : 

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 
-const ProductCard = () => {
+const ProductCard = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,9 +13,10 @@ const ProductCard = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
-  const handleAddToCart = (productId, productName) => {
-    console.log(`Product ${productId} added to cart`);
-    alert(`Product id: ${productId}, Name: ${productName} added to cart`);
+  const handleAddToCart = (productId, productName, price) => {
+    onAddToCart(productId, productName, price);
+    console.log(`${(productId, productName, price)}`);
+    alert(`Product id :${productId}, name :${productName} added to shop !`);
   };
 
   return (
@@ -91,7 +92,9 @@ const ProductCard = () => {
                   right: "10px",
                   borderRadius: "50%",
                 }}
-                onClick={() => handleAddToCart(product.id, product.name)}
+                onClick={() =>
+                  handleAddToCart(product.id, product.name, product.price)
+                }
               >
                 <FaShoppingCart />
               </Button>

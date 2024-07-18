@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, InputGroup, Image, Button } from "react-bootstrap";
 
-const NevBar = () => {
+const NevBar = ({ cartTotal, onViewCartDetails }) => {
   return (
     <div>
       {/* Start Row 1 */}
@@ -30,7 +30,8 @@ const NevBar = () => {
           </tr>
         </table>
       </div>
-      {/* end Row 1 */}
+      {/* End Row 1 */}
+
       {/* Start Row 2 */}
       <div
         style={{
@@ -92,11 +93,12 @@ const NevBar = () => {
                           paddingTop: "5px",
                           paddingBottom: "5px",
                         }}
+                        onClick={onViewCartDetails}
                       >
-                        Shop
+                        Shop ({cartTotal} items)
                       </Button>
                     </td>
-                    <td>Shopping Card :</td>
+                    <td>Shopping Cart :</td>
                     <td style={{ fontSize: "30px" }}>0$</td>
                   </tr>
                 </tbody>
@@ -106,6 +108,7 @@ const NevBar = () => {
         </table>
       </div>
       {/* End Row 2 */}
+
       {/* Start Row 3 */}
       <div style={{ color: "black", fontFamily: "Arial, sans-serif" }}>
         <table
@@ -147,7 +150,7 @@ const NevBar = () => {
           </tr>
         </table>
       </div>
-      {/* end Row 3 */}
+      {/* End Row 3 */}
     </div>
   );
 };

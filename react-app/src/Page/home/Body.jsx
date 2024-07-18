@@ -1,12 +1,12 @@
 import { Image, Row, Col, Container } from "react-bootstrap";
-import ProductCard from "../../Component/Card";
+import ProductCard from "../../Component/Cards/Card";
 // import CardNoDiscount from "../../Component/Card-NoDiscount";
 import SaleCard from "../../Component/productCard/SaleCard";
 import Materials from "../../Component/productCard/Materials";
 import Discount from "../../Component/productCard/Discount";
 import DailyBlog from "../../Component/DailyBlog/DailyBlog";
 
-const BodyApp = () => {
+const BodyApp = ({ onAddToCart }) => {
   return (
     <div>
       <div style={{ background: "gray", width: "100%" }}>
@@ -370,38 +370,8 @@ const BodyApp = () => {
                 </h4>
               </div>
               <Container>
-                <ProductCard></ProductCard>
+                <ProductCard onAddToCart={onAddToCart} />
               </Container>
-              {/* <Container>
-                <Row>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={3}>
-                    <ProductCard />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                  <Col md={3}>
-                    <CardNoDiscount />
-                  </Col>
-                </Row>
-              </Container> */}
             </div>
 
             {/* ---------------------------------------------------------------- */}

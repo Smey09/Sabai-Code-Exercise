@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Table } from "react-bootstrap";
+import { Modal, Button, Table, Row } from "react-bootstrap";
 
 const CartDetails = ({ cartItems }) => {
   const [showModal, setShowModal] = useState(true);
@@ -8,9 +8,10 @@ const CartDetails = ({ cartItems }) => {
     setShowModal(false);
   };
 
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
   return (
     <>
-      {/* Your other content */}
       {showModal && (
         <Modal show={true} onHide={closeModal}>
           <Modal.Header closeButton>
@@ -21,6 +22,7 @@ const CartDetails = ({ cartItems }) => {
               <thead>
                 <tr>
                   <th>#</th>
+                  <th>Id</th>
                   <th>Name</th>
                   <th>Price</th>
                 </tr>
@@ -29,6 +31,7 @@ const CartDetails = ({ cartItems }) => {
                 {cartItems.map((item, index) => (
                   <tr key={item.id}>
                     <td>{index + 1}</td>
+                    <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>${item.price.toFixed(2)}</td>
                   </tr>
@@ -37,6 +40,12 @@ const CartDetails = ({ cartItems }) => {
             </Table>
           </Modal.Body>
           <Modal.Footer>
+            <Row>
+              <tr>
+                <th>Total: </th>
+                <th style={{ color: "red" }}>${totalPrice}</th>
+              </tr>
+            </Row>
             <Button variant="secondary" onClick={closeModal}>
               Close
             </Button>

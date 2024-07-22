@@ -15,7 +15,7 @@ const ProductCard = ({ onAddToCart }) => {
 
   const handleAddToCart = (productId, productName, price) => {
     onAddToCart(productId, productName, price);
-    console.log(`${(productId, productName, price)}`);
+    console.log(`${productId} : ${productName} :  ${price}`);
     alert(`Product id :${productId}, name :${productName} added to shop !`);
   };
 

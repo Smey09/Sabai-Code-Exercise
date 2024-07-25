@@ -1,22 +1,28 @@
 import React from "react";
 import "./App.css";
-// import Counter from "./components/Hook";
-// import SignIn from "./components/SingIn";
-import TodoApp from "./components/TodoApp";
+// import TodoApp from "./components/TodoApp";
+import AddItem from "./components/Day04/AddItems";
+import AddRemove from "./components/Day04/AddRemove";
+import UpdateArray from "./components/Day04/UpdateArray";
 
 const App: React.FC = () => {
   return (
     <>
-      {/* <div className="p-32 bg-orange-700 border-spacing-56">
-        <h1>events propagate and how to stop</h1>
-        <SignIn />
-      </div>
-      <div className="p-32 bg-blue-300 border-spacing-56">
-        <h1>Hook</h1>
-        <Counter />
-      </div> */}
-      <div>
+      {/* <div>
         <TodoApp />
+      </div> */}
+
+      <div className="bg-gray-500">
+        <div className="p-10">
+          <AddRemove />
+        </div>
+        <div className="p-10">
+          <h3 className="text-white">Update Array</h3>
+          <UpdateArray />
+        </div>
+        <div className="p-10">
+          <AddItem />
+        </div>
       </div>
     </>
   );

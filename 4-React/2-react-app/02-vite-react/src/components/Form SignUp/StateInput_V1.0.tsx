@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const GmailInput: React.FC = () => {
+const StateInput: React.FC = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -97,4 +97,4 @@ const GmailInput: React.FC = () => {
   );
 };
 
-export default GmailInput;
+export default StateInput;

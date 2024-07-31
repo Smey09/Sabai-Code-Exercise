@@ -21,6 +21,9 @@ SABAI-CODE-EXERCISE
 │
 ├── 3-TypeScript
 │   ├── examples
+│   │   ├── 11-Generic Type
+│   │   ├── 12-Type Casting
+│   │   └── 13-Type Enums
 │   ├── practice
 │   └── exercise-01.txt
 │
@@ -30,6 +33,14 @@ SABAI-CODE-EXERCISE
 │   └── 2-react-app
 │       ├── 1-vite-test
 │       └── 1-vite-react
+│           └── src
+│             └── components
+│                 ├── Day04
+│                 ├── Day06-Share-State
+│                 ├── Form SignUP
+│                 ├── TodoApp.tsx
+│                 └── UpdateState.tsx
 │
 ├── react-app-jsonserver
 └── testing
+```

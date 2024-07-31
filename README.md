@@ -32,14 +32,14 @@ SABAI-CODE-EXERCISE
 │   │   └── typeScript.ts
 │   └── 2-react-app
 │       ├── 1-vite-test
-│       └── 1-vite-react
+│       └── 2-vite-react
 │           └── src
-│             └── components
-│                 ├── Day04
-│                 ├── Day06-Share-State
-│                 ├── Form SignUP
-│                 ├── TodoApp.tsx
-│                 └── UpdateState.tsx
+│               └── components
+│                   ├── Day04
+│                   ├── Day06-Share-State
+│                   ├── Form SignUP
+│                   ├── TodoApp.tsx
+│                   └── UpdateState.tsx
 │
 ├── react-app-jsonserver
 └── testing

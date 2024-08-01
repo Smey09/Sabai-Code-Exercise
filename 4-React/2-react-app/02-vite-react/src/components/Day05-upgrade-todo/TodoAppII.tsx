@@ -5,7 +5,7 @@ interface Item {
   name: string;
 }
 
-const AddItem: React.FC = () => {
+const TodoAppII: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [newItemName, setNewItemName] = useState("");
   const [editingItem, setEditingItem] = useState<Item | null>(null);
@@ -90,4 +90,4 @@ const AddItem: React.FC = () => {
   );
 };
 
-export default AddItem;
+export default TodoAppII;

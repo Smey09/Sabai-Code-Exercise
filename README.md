@@ -31,16 +31,18 @@ SABAI-CODE-EXERCISE
 │   ├── 1-typeScript
 │   │   └── typeScript.ts
 │   └── 2-react-app
-│       ├── 1-vite-test
-│       └── 2-vite-react
-│           └── src
-│               └── components
-│                   ├── Day04
-│                   ├── Day06-Share-State
-│                   ├── Day07-Effect-and-ref
-│                   ├── Form SignUP
-│                   ├── TodoApp.tsx
-│                   └── UpdateState.tsx
+│       ├── 01-vite-test
+│       ├── 02-vite-react
+│       │   └── src
+│       │       └── components
+│       │           ├── Day01-react-vite
+│       │           ├── Day02-SignUp-State-Hook
+│       │           ├── Day03-SignUp-Yuk
+│       │           ├── Day04-todo-app
+│       │           ├── Day06-Share-State
+│       │           ├── Day07-Effect-and-ref
+│       │           └── Day08-Todo-CRUD-Json-Server
+│       └── 03-Json-Server
 │
 ├── react-app-jsonserver
 └── testing

@@ -39,6 +39,7 @@ SABAI-CODE-EXERCISE
 │       │           ├── Day02-SignUp-State-Hook
 │       │           ├── Day03-SignUp-Yuk
 │       │           ├── Day04-todo-app
+│       │           ├── Day05-upgrade-app
 │       │           ├── Day06-Share-State
 │       │           ├── Day07-Effect-and-ref
 │       │           └── Day08-Todo-CRUD-Json-Server

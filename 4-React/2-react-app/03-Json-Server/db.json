@@ -1,19 +1,14 @@
 {
   "items": [
     {
-      "id": "4ad4",
-      "text": "hello kk",
+      "id": "c25c",
+      "text": "kk",
       "completed": true
     },
     {
-      "id": "cde9",
-      "text": "hello 89",
-      "completed": false
-    },
-    {
-      "id": "8a61",
-      "text": "hi",
-      "completed": false
+      "id": "fd96",
+      "text": "kk",
+      "completed": true
     }
   ]
 }

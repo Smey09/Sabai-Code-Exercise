@@ -28,17 +28,6 @@ const TodoApp: React.FC = () => {
     fetchTodos();
   }, []);
 
-  // const addTodo = async () => {
-  //   if (input.trim() === "") return;
-  //   try {
-  //     const newTodo: Omit<Todo, "id"> = { text: input, completed: false };
-  //     const response = await axios.post<Todo>(API_URL, newTodo);
-  //     setTodos([...todos, response.data]);
-  //     setInput("");
-  //   } catch (error) {
-  //     console.error("Error adding todo:", error);
-  //   }
-  // };
   const addTodo = async () => {
     if (input.trim() === "") {
       console.log("Input is empty. No todo item added.");
@@ -127,7 +116,7 @@ const TodoApp: React.FC = () => {
           }}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 border border-gray-300 p-2 rounded-l-md"
+          className="flex-1 border border-gray-300 p-2 rounded-l-md "
           placeholder="Add a new todo..."
         />
         <button
@@ -141,12 +130,14 @@ const TodoApp: React.FC = () => {
         {todos.map((todo) => (
           <li key={todo.id} className="flex items-center justify-between p-2">
             <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => toggleTodo(todo.id)}
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
+              {isEditing !== todo.id && (
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleTodo(todo.id)}
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+              )}
               {isEditing === todo.id ? (
                 <div className="flex items-center space-x-2">
                   <input

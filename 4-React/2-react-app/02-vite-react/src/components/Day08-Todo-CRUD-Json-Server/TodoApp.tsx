@@ -28,12 +28,35 @@ const TodoApp: React.FC = () => {
     fetchTodos();
   }, []);
 
+  // const addTodo = async () => {
+  //   if (input.trim() === "") return;
+  //   try {
+  //     const newTodo: Omit<Todo, "id"> = { text: input, completed: false };
+  //     const response = await axios.post<Todo>(API_URL, newTodo);
+  //     setTodos([...todos, response.data]);
+  //     setInput("");
+  //   } catch (error) {
+  //     console.error("Error adding todo:", error);
+  //   }
+  // };
   const addTodo = async () => {
-    if (input.trim() === "") return;
+    if (input.trim() === "") {
+      console.log("Input is empty. No todo item added.");
+      return;
+    }
+
+    console.log("Adding ->", input);
+
     try {
       const newTodo: Omit<Todo, "id"> = { text: input, completed: false };
+      console.log("New todo data:", newTodo);
+
       const response = await axios.post<Todo>(API_URL, newTodo);
-      setTodos([...todos, response.data]);
+
+      const result = response.data;
+      console.log(result);
+
+      setTodos([...todos, result]);
       setInput("");
     } catch (error) {
       console.error("Error adding todo:", error);
@@ -92,13 +115,13 @@ const TodoApp: React.FC = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-gray-100 rounded-lg shadow-md">
+    <div className="p-4 max-w-md mx-auto bg-gray-300 rounded-lg shadow-md hover:bg-gray-100">
       <h1 className="text-2xl font-bold mb-4">Todo List</h1>
       <div className="flex mb-4">
         <input
           type="text"
           onKeyDown={(e) => {
-            if (e.key == "Enter") {
+            if (e.key === "Enter") {
               addTodo();
             }
           }}
@@ -109,12 +132,12 @@ const TodoApp: React.FC = () => {
         />
         <button
           onClick={addTodo}
-          className="bg-blue-500 text-white p-2 rounded-r-md"
+          className="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600"
         >
           Add
         </button>
       </div>
-      <ul className="list-disc pl-5">
+      <ul className="list-disc pl-5 bg-white border-2 border-black rounded-md">
         {todos.map((todo) => (
           <li key={todo.id} className="flex items-center justify-between p-2">
             <label className="flex items-center space-x-2">
@@ -130,7 +153,7 @@ const TodoApp: React.FC = () => {
                     type="text"
                     value={editInput}
                     onKeyDown={(e) => {
-                      if (e.key == "Enter") {
+                      if (e.key === "Enter") {
                         saveEdit();
                       }
                     }}
@@ -139,13 +162,13 @@ const TodoApp: React.FC = () => {
                   />
                   <button
                     onClick={saveEdit}
-                    className="bg-blue-500 text-white p-2 rounded-r-md"
+                    className="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-700"
                   >
                     Save
                   </button>
                   <button
                     onClick={cancelEdit}
-                    className="bg-gray-500 text-white p-2 rounded-r-md"
+                    className="bg-gray-500 text-white p-2 rounded-r-md hover:bg-yellow-500"
                   >
                     Cancel
                   </button>
@@ -154,7 +177,7 @@ const TodoApp: React.FC = () => {
                 <span
                   className={`flex-1 cursor-pointer ${
                     todo.completed
-                      ? "line-through text-gray-400"
+                      ? "line-through text-blue-500 "
                       : "text-red-500"
                   }`}
                 >
@@ -166,19 +189,21 @@ const TodoApp: React.FC = () => {
               {isEditing === todo.id ? (
                 <></>
               ) : (
-                <button
-                  onClick={() => startEditing(todo)}
-                  className="text-blue-500"
-                >
-                  Edit
-                </button>
+                <>
+                  <button
+                    onClick={() => startEditing(todo)}
+                    className="bg-blue-600 hover:bg-yellow-400 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => deleteTodo(todo.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Delete
+                  </button>
+                </>
               )}
-              <button
-                onClick={() => deleteTodo(todo.id)}
-                className="text-red-500"
-              >
-                Delete
-              </button>
             </div>
           </li>
         ))}

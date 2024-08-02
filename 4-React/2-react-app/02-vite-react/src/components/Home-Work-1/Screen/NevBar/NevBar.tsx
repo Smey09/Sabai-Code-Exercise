@@ -13,8 +13,8 @@ const NevBar: React.FC = () => {
 
   return (
     <div>
-      <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 text-white">
+      <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800 ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 text-blue-700">
           <div>Total: {total}</div>
           <h1>Completed: {completed}</h1>
           <button

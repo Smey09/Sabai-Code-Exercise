@@ -1,7 +1,7 @@
 import React from "react";
-import AppBar from "./AppBar/AppBar";
-import NevBar from "./NevBar/NevBar";
-import BodyApp from "./Body/BodyApp";
+import AppBar from "../Screen/AppBar/AppBar";
+import NevBar from "../Screen/NevBar/NevBar";
+import BodyApp from "../Screen/Body/BodyApp";
 
 const MainApp: React.FC = () => {
   return (

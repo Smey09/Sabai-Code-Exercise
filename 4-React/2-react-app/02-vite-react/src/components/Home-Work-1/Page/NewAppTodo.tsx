@@ -2,7 +2,7 @@ import React from "react";
 import TodoApp from "../../Day08-Todo-CRUD-Json-Server/TodoApp";
 import { useNavigate } from "react-router-dom";
 
-const TodoPage: React.FC = () => {
+const NewAppTodo: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
@@ -21,4 +21,4 @@ const TodoPage: React.FC = () => {
   );
 };
 
-export default TodoPage;
+export default NewAppTodo;

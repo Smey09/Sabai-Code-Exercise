@@ -1,15 +1,13 @@
 // App.js or similar file
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MainApp from "../Screen/MainApp";
-import TodoPage from "../Page/TodoPage";
+import HomePage from "../Pages/Home/Home";
 
 const RouteAppPage: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainApp />} />
-        <Route path="/todoApp" element={<TodoPage />} />
+        <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
   );

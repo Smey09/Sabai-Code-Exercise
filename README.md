@@ -46,6 +46,9 @@ SABAI-CODE-EXERCISE
 │       │           └── HomeWork
 │       └── 03-Json-Server
 │
+├── 5-NextJS
+│   └── 1-nextjs-app
+│
 ├── react-app-jsonserver
 └── testing
 ```

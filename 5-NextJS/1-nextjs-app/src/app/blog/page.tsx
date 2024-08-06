@@ -3,8 +3,10 @@ import React from "react";
 
 export default function Blog() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Welcome to the Blog Section</h1>
+    <div className="flex min-h-screen items-center justify-center p-10">
+      <h1 className="text-4xl font-bold text-gray-800">
+        Welcome to the Blog of items
+      </h1>
     </div>
   );
 }

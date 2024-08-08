@@ -1,0 +1,12 @@
+{
+  "name": "sabai-code-exercise",
+  "version": "1.0.0",
+  "description": "Welcome to my SABAI-CODE-EXERCISE repository! This repository is organized into several sections, each focusing on different web development technologies and exercises. Below is an overview of the folder structure and the contents of each section.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

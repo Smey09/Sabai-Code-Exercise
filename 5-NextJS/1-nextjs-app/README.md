@@ -21,9 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     ├── .next
     ├── node_modules
     ├── public
-    │ 
-    │ 
-    │ 
+    │
     ├── src
     │   └── app
     │       ├── blog
@@ -32,8 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     │           ├── page.tsx
     │           └── products
     │               └── page.tsx
-    │
-    │ 
     │ 
     ├── .gitignore
     ├── next.config.js

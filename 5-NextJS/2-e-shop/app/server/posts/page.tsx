@@ -19,7 +19,7 @@ export default async function PostsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post: Post) => (
           <div
-            className="bg-white p-6 rounded text-white shadow-lg"
+            className="bg-white hover:bg-gray-200 p-6 rounded text-white shadow-lg"
             key={post.id}
           >
             <h2 className="text-2xl font-bold text-blue-600">{post.title}</h2>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export const BASE_URL = "https://jsonplaceholder.typicode.com";
+const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 interface Post {
   userId: number;

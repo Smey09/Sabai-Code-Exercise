@@ -31,7 +31,7 @@ export default async function UsersPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {users.map((user: User) => (
           <div
-            className="bg-white p-6 rounded text-blue-700 shadow-lg"
+            className="bg-white hover:bg-gray-200 p-6 rounded text-blue-700 shadow-lg"
             key={user.id}
           >
             <p className="text-sm font-semibold">ID: {user.id}</p>

@@ -1,9 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import { useFetchData } from "@/app/api/client/FetchClientData";
 
 export default function Users() {
-  const { users } = useFetchData();
+  const [page, setPage] = useState(1);
+  const [limit] = useState(10); // Number of users per page
+  const { users, error } = useFetchData(page, limit);
+
+  if (error) {
+    return (
+      <div className="p-6 bg-red-100 min-h-screen text-red-600">{error}</div>
+    );
+  }
+
+  const handlePreviousPage = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
+  const handleNextPage = () => {
+    setPage(page + 1);
+  };
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -16,7 +33,7 @@ export default function Users() {
           >
             <p className="text-sm font-semibold">ID: {user.id}</p>
             <h2 className="text-2xl font-bold">{user.name}</h2>
-            <p className="text-lg"> username: @{user.username}</p>
+            <p className="text-lg">Username: @{user.username}</p>
             <p className="text-lg">Email: {user.email}</p>
             <h3 className="mt-4 text-xl font-semibold">User Address</h3>
             <p className="text-sm">{user.address.street}</p>
@@ -25,6 +42,21 @@ export default function Users() {
             <p className="text-sm">{user.address.zipcode}</p>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={handlePreviousPage}
+          disabled={page === 1}
+          className="bg-blue-500 text-white px-4 py-2 rounded mr-4 disabled:opacity-50"
+        >
+          Previous
+        </button>
+        <button
+          onClick={handleNextPage}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

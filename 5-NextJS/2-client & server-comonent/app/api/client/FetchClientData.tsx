@@ -28,25 +28,31 @@ interface User {
   };
 }
 
-export function useFetchData() {
+export function useFetchData(page: number, limit: number) {
   const [users, setUsers] = useState<User[]>([]);
   const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [postsResponse, usersResponse] = await Promise.all([
-          fetch(`${BASE_URL}/posts`).then((res) => res.json()),
-          fetch(`${BASE_URL}/users`).then((res) => res.json()),
+          fetch(`${BASE_URL}/posts?_page=${page}&_limit=${limit}`).then((res) =>
+            res.json()
+          ),
+          fetch(`${BASE_URL}/users?_page=${page}&_limit=${limit}`).then((res) =>
+            res.json()
+          ),
         ]);
         setPosts(postsResponse);
         setUsers(usersResponse);
       } catch (error) {
+        setError("Error fetching data");
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [page, limit]);
 
-  return { users, posts };
+  return { users, posts, error };
 }

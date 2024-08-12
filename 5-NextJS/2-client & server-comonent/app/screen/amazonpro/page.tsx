@@ -1,25 +1,26 @@
 "use client";
 
-import {
-  fetchPaginatedMovies,
-  fetchMovieDetails,
-} from "@/app/api/Github/Github";
+import { fetchPaginatedMovies } from "@/app/api/Amazonpro/amazonpro";
 import { useState, useEffect } from "react";
 
-interface Movie {
-  id: number;
+interface Data {
+  _id: number;
   title: string;
-  poster_path: string;
-  release_date: string;
-  overview: string;
-  vote_average: number;
+  price: number;
+  previousPrice: number;
+  description: string;
+  category: string;
+  image: string;
+  isNew: boolean;
+  brand: string;
+  quantity: number;
 }
 
 const MoviesPage: React.FC = () => {
   const [page, setPage] = useState<number>(1);
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Data[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
-  const [movieDetails, setMovieDetails] = useState<Movie | null>(null);
+  const [movieDetails, setMovieDetails] = useState<Data | null>(null);
   const [moviesError, setMoviesError] = useState<string | null>(null);
   const [detailsError, setDetailsError] = useState<string | null>(null);
 
@@ -27,6 +28,7 @@ const MoviesPage: React.FC = () => {
     const loadMovies = async () => {
       try {
         const data = await fetchPaginatedMovies(page);
+        console.log("Fetched Movies:", data); // Add this line to inspect the data
         setMovies(data.results);
         setTotalPages(data.total_pages);
       } catch (error) {
@@ -35,19 +37,6 @@ const MoviesPage: React.FC = () => {
     };
     loadMovies();
   }, [page]);
-
-  useEffect(() => {
-    const loadMovieDetails = async () => {
-      try {
-        const movieId = 157336; // Example movie ID
-        const data = await fetchMovieDetails(movieId);
-        setMovieDetails(data);
-      } catch (error) {
-        setDetailsError("Error fetching movie details");
-      }
-    };
-    loadMovieDetails();
-  }, []);
 
   const handlePageChange = (newPage: number) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -65,43 +54,41 @@ const MoviesPage: React.FC = () => {
         <div className="mb-6">
           <h2 className="text-xl font-semibold">Featured Movie</h2>
           <img
-            src={movieDetails.poster_path}
+            src={movieDetails.image}
             alt={movieDetails.title}
             className="w-full h-64 object-cover"
           />
           <h3 className="text-lg font-semibold">{movieDetails.title}</h3>
-          <p>{movieDetails.overview}</p>
+          <p>{movieDetails.description}</p>
           <p className="text-yellow-500 font-semibold">
-            Rating: {movieDetails.vote_average}/10
+            Brand: {movieDetails.brand}
           </p>
         </div>
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {movies.map((movie: Movie) => (
+        {movies.map((data: Data) => (
           <div
-            key={movie.id}
+            key={data._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:bg-gray-200 transition"
           >
             <img
-              src={movie.poster_path}
-              alt={movie.title}
+              src={data.image}
+              alt={data.title}
               className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold text-orange-500 mb-2">
-                {movie.title}
+                {data.title}
               </h2>
-              <p className="text-gray-700 mb-2">
-                Release Date: {movie.release_date}
-              </p>
+              <p className="text-gray-700 mb-2">Brand: {data.brand}</p>
               <p className="text-gray-600 text-sm mb-2">
-                {movie.overview.length > 100
-                  ? movie.overview.substring(0, 100) + "..."
-                  : movie.overview}
+                {data.description.length > 100
+                  ? data.description.substring(0, 100) + "..."
+                  : data.description}
               </p>
               <p className="text-yellow-500 font-semibold">
-                Rating: {movie.vote_average}/10
+                Price: {data.price}
               </p>
             </div>
           </div>

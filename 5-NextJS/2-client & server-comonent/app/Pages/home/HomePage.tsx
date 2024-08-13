@@ -16,6 +16,8 @@ const HomePage = () => {
   const getMoviesTMDBClient = `${My_URL}/screen/movies`;
   const getMoviesAmazonproClient = `${My_URL}/screen/amazonpro`;
 
+  const learnUI_1 = `${My_URL}/screen/learnUI`;
+
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
 
@@ -29,7 +31,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-green-200">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-96">
         <h1 className="text-3xl font-bold text-center mb-6">Home Page</h1>
         <div className="space-y-4">
@@ -78,6 +80,20 @@ const HomePage = () => {
               <option value={getMoviesAmazonproClient}>
                 Get Amazonpro Movies
               </option>
+            </select>
+          </div>
+          <div className="bg-blue-500 p-4 rounded-lg text-white text-center shadow-md">
+            <div className="text-lg font-semibold mb-2">Learn UI</div>
+            <select
+              id="movies-select"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              onChange={handleSelectChange}
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select UI Component
+              </option>
+              <option value={learnUI_1}>Learn UI One</option>
             </select>
           </div>
         </div>

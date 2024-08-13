@@ -58,7 +58,7 @@ const MovieTMDB: React.FC = () => {
 
       {/* Display video information in a card */}
       {firstVideo && (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+        <div className="mb-4 p-2 rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-200">
           <img
             src={`https://img.youtube.com/vi/${firstVideo.key}/hqdefault.jpg`}
             alt={firstVideo.name}

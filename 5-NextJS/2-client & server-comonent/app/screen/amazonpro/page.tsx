@@ -46,13 +46,13 @@ const MoviesPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Popular Movies</h1>
+      <h1 className="text-3xl font-bold mb-6">Popular Phone</h1>
       {moviesError && <p className="text-red-500">{moviesError}</p>}
       {detailsError && <p className="text-red-500">{detailsError}</p>}
 
       {movieDetails && (
         <div className="mb-6">
-          <h2 className="text-xl font-semibold">Featured Movie</h2>
+          <h2 className="text-xl font-semibold">Featured Phone</h2>
           <img
             src={movieDetails.image}
             alt={movieDetails.title}

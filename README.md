@@ -47,7 +47,13 @@ SABAI-CODE-EXERCISE
 │       └── 03-Json-Server
 │
 ├── 5-NextJS
-│   └── 1-nextjs-app
+│   ├── 1-nextjs-app
+│   ├── 2-client & server-comonent
+│   ├── 2-fetchdata-components-storybook
+│   └── 3-server-side-pagination
+│
+├── 6-Storybook
+│   └── 1-storybook-next
 │
 ├── react-app-jsonserver
 └── testing

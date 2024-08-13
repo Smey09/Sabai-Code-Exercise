@@ -1,13 +1,11 @@
-"use client";
+import React from "react";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-interface PaginationProps {
-  total: number;
-  limit: number;
-}
-
-const Pagination: React.FC<PaginationProps> = ({ total, limit }) => {
+const Paginations2: React.FC<{ total: number; limit: number }> = ({
+  total,
+  limit,
+}) => {
   const totalPages = Math.ceil(total / limit);
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -21,12 +19,14 @@ const Pagination: React.FC<PaginationProps> = ({ total, limit }) => {
   };
 
   return (
-    <div className="join">
+    <div className="flex justify-center mt-4">
       {Array.from({ length: totalPages }, (_, index) => (
         <button
           key={index}
-          className={`join-item btn ${
-            currentPage === index + 1 ? "btn-active" : ""
+          className={`mx-1 px-3 py-1 border rounded ${
+            currentPage === index + 1
+              ? "bg-blue-500 text-white"
+              : "bg-white text-blue-500 border-blue-500"
           }`}
           onClick={() => createPageURL(index + 1)}
         >
@@ -37,4 +37,4 @@ const Pagination: React.FC<PaginationProps> = ({ total, limit }) => {
   );
 };
 
-export default Pagination;
+export default Paginations2;

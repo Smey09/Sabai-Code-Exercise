@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import Paginations2 from "@/app/components/Paginations2";
 
 interface Product {
   id: string;
@@ -15,9 +17,13 @@ interface Product {
   about: string;
 }
 
+const limit = 6;
+
 const Page: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,10 +44,20 @@ const Page: React.FC = () => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    const page = Number(searchParams.get("page")) || 1;
+    setCurrentPage(page);
+  }, [searchParams]);
+
   if (error) {
     return <div>Error: {error}</div>;
   }
-  const limit = 5;
+
+  const displayedProducts = products.slice(
+    (currentPage - 1) * limit,
+    currentPage * limit
+  );
+
   return (
     <div className="container mx-auto p-4 bg-white">
       <h1 className="text-2xl font-bold mb-4">Products</h1>
@@ -51,7 +67,7 @@ const Page: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((product) => (
+          {displayedProducts.map((product) => (
             <li
               key={product.id}
               className="text-black mb-4 p-4 border rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-200"
@@ -85,6 +101,7 @@ const Page: React.FC = () => {
           ))}
         </ul>
       </motion.div>
+      <Paginations2 total={products.length} limit={limit} />
     </div>
   );
 };

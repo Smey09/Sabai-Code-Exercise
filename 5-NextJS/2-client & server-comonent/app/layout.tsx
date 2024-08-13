@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={inter.className}>
         <NevBar />
-        <div className="flex-grow">{children}</div>
+        <div className="p-10 min-h-[calc(100vh-66px-52px)]">{children}</div>
         <Footer />
       </body>
     </html>

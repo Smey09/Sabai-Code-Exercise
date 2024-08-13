@@ -17,6 +17,7 @@ const HomePage = () => {
   const getMoviesAmazonproClient = `${My_URL}/screen/amazonpro`;
 
   const learnUI_1 = `${My_URL}/screen/learnUI`;
+  const getAllProducts = `${My_URL}/screen/products`;
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
@@ -31,7 +32,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center">
       <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-96">
         <h1 className="text-3xl font-bold text-center mb-6">Home Page</h1>
         <div className="space-y-4">
@@ -94,6 +95,7 @@ const HomePage = () => {
                 Select UI Component
               </option>
               <option value={learnUI_1}>Learn UI One</option>
+              <option value={getAllProducts}>Products Paginations</option>
             </select>
           </div>
         </div>

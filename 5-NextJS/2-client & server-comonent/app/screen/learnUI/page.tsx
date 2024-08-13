@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import Paginations2 from "@/app/components/Paginations2";
+import { useSearchParams } from "next/navigation";
+import Paginations from "@/app/components/Organisms/Paginations";
 
 interface Product {
   id: string;
@@ -101,7 +101,7 @@ const Page: React.FC = () => {
           ))}
         </ul>
       </motion.div>
-      <Paginations2 total={products.length} limit={limit} />
+      <Paginations total={products.length} limit={limit} />
     </div>
   );
 };

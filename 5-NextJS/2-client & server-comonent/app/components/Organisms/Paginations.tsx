@@ -1,5 +1,5 @@
 import React from "react";
-import PaginationButton from "../Atomic/PaginationButton";
+import PaginationControls from "../Molecule/PaginationControls";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 interface PaginationProps {
@@ -21,16 +21,11 @@ const Pagination: React.FC<PaginationProps> = ({ total, limit }) => {
   };
 
   return (
-    <div className="flex justify-center mt-4">
-      {Array.from({ length: totalPages }, (_, index) => (
-        <PaginationButton
-          key={index}
-          pageNumber={index + 1}
-          isActive={currentPage === index + 1}
-          onClick={handlePageChange}
-        />
-      ))}
-    </div>
+    <PaginationControls
+      totalPages={totalPages}
+      currentPage={currentPage}
+      onPageChange={handlePageChange}
+    />
   );
 };
 

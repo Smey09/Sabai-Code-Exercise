@@ -1,26 +1,19 @@
-import Link from "next/link";
-import { getAllProducts } from "../api/products/data";
+import React from "react";
 import ProductCard from "./ProductCard";
 
-interface ProductListProps {
-  currentPage?: number;
-  limit?: number;
+interface Product {
+  thumbnail: string;
+  title: string;
+  description: string;
+  tags: string[];
+  id: string;
 }
 
-const ProductList: React.FC<ProductListProps> = async ({
-  currentPage,
-  limit,
-}) => {
-  const { products } = await getAllProducts({ currentPage, limit });
-
+const ProductList: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
-    <div className="grid grid-cols-3 gap-5">
-      {products.map((item, index) => (
-        <div key={index} className="mx-auto m-2">
-          <Link href={`products/${item.id}`}>
-            <ProductCard item={item} />
-          </Link>
-        </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

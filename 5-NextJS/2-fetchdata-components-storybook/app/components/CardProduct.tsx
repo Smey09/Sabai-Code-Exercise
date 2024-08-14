@@ -12,7 +12,7 @@ export interface Product {
   image: string;
 }
 
-interface CartProductProps {
+export interface CartProductProps {
   product: Product;
 }
 

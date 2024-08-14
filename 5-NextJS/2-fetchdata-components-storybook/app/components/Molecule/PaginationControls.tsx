@@ -1,7 +1,7 @@
 import React from "react";
 import PaginationButton from "../Atomic/PaginationButton";
 
-interface PaginationControlsProps {
+export interface PaginationControlsProps {
   totalPages: number;
   currentPage: number;
   onPageChange: (pageNumber: number) => void;

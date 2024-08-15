@@ -2,10 +2,15 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import CartProduct, { CartProductProps } from "../CardProduct";
 
-export default {
-  title: "UI/Card/CartProduct",
+// export default {
+//   title: "UI/Card/CartProduct",
+//   component: CartProduct,
+// } as Meta;
+
+const meta: Meta<typeof CartProduct> = {
   component: CartProduct,
-} as Meta;
+};
+export default meta;
 
 const Template: StoryFn<CartProductProps> = (args) => <CartProduct {...args} />;
 
